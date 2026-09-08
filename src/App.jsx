@@ -3,15 +3,26 @@ import './App.css';
 
 import ExpenseItem from "./components/ExpenseItem";
 
+function App() {
+    const expenses = [
+        {
+            date: new Date(2021, 0, 10),
+            title:'New book',
+            price: 30.99
+        },
+        {
+            date: new Date(2021, 5, 5),
+            title:'Icecream',
+            price: 3.99
+        }
+    ]
 
-const App = () => {
-    return (
-    <ExpenseItem expenseData={{
-  title: "Groceries",
-  price: 42,
-  date: new Date(2026, 8, 2)
-}} />
+  return (
+    <div className="App">
+      <ExpenseItem expenseData={expenses[0]}></ExpenseItem>
+      <ExpenseItem expenseData={expenses[1]}></ExpenseItem>
+    </div>
+  );
+}
 
-    );
-};
 export default App;
